@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <windows.h>
+# include <stdlib.h>
+
 int vida;
 int pers = 0;
 
@@ -34,8 +37,9 @@ int escolha3(int x) {
     }
 }
 int gameover() {
+    system("color 43");
     int esc;
-    printf("    \nVOCÊ MORREU!\n Deseja continuar?\n 1. Sim.\n 2. Não\n >>> ");
+    printf("\n    VOCÊ MORREU!\n Deseja continuar?\n 1. Sim.\n 2. Não\n >>> ");
     scanf("%d", &esc);
     escolha2(esc);
     if (esc == 1) {
@@ -48,8 +52,14 @@ int gameover() {
 
 int p2() { 
     while (vida != 0) {
-    printf("    Você se encontra em um uma encruzilhada onde há três possibilidades de escolha:\n 1. Corredor A.\n 2. Corredor B\n 3.Corredor C\n >>> ");
-    printf("Você tem: %d de VIDA\n", vida);
+    char texto[] = "    Você se encontra em um uma encruzilhada onde há três possibilidades de escolha:\n 1. Corredor A.\n 2. Corredor B\n 3.Corredor C\n";
+    int i = 0;
+    while (texto[i] != '\0') {
+        printf("%c", texto[i]); 
+        Sleep(25); 
+        i++;
+        }
+    printf("Você tem: %d de VIDA\n>>>", vida);
     return 0;
     }
     return gameover();
@@ -57,37 +67,70 @@ int p2() {
 
 int p1(){
     while (vida != 0) {
-    int esc;
-    printf("    Mesmo com a sua visão limitada, você consegue espiar alguns objetos na sua cela.\n    Primeiro, no chão, você encontra uma tigela, cheio de uma substância turva, que você assume que seja água.\n    Segundo, na próximo a porta da sua cela, você percebe uma armadura, aparentemente sem ninguém à vestindo. O que você faz?\n");
-    printf("Você tem: %d de VIDA\n", vida);
-    printf("    1. Beber a água do pote.\n    2. Analisar a armadura.\n    3.Bater na armadura\n>>> ");
-    scanf("%d", &esc);
-    escolha3(esc);
-    if (esc == 1) {
-         printf("    A 'água' (se você até pode chamar o líquido horroroso disso) tem um gosto terrível, você se esforça o máximo para não vomitar. Porém, o enjoo te enfraquece. -1 DE VIDA");
+        char texto[] = "    Mesmo com a sua visão limitada, você consegue espiar alguns objetos na sua cela.\n    Primeiro, no chão, você encontra uma tigela, cheio de uma substância turva, que você assume que seja água.\n    Segundo, na próximo a porta da sua cela, você percebe uma armadura, aparentemente sem ninguém à vestindo. O que você faz?\n    1. Beber a água do pote.\n    2. Analisar a armadura.\n    3.Bater na armadura\n";
+        int i = 0;
+        int esc;
+        while (texto[i] != '\0') {
+        printf("%c", texto[i]); 
+        Sleep(25); 
+        i++;
+        }
+        i = 0;
+        printf("Você tem: %d de VIDA\n>>> ", vida);
+        scanf("%d", &esc);
+        escolha3(esc);
+     if (esc == 1) {
+        char texto2 [] = "    \nA 'água' (se você até pode chamar o líquido horroroso disso) tem um gosto terrível, você se esforça o máximo para não vomitar. Porém, o enjoo te enfraquece. -1 DE VIDA\n";
+        while (texto2[i] != '\0') {
+        printf("%c", texto2[i]); 
+        Sleep(25); 
+        i++;
+        }
+        i = 0;
          vida -= 1;
          return p1();
     }
-    else if (esc == 2) {
-        if (pers == 1) {
-            printf("    Você observa a armadura. Ela contém runas e outros símbolos que você não consegue decifrar. Isso foi uma perda de tempo, você pensa.\n");
+        else if (esc == 2) {
+            if (pers == 1) {
+                char texto2[] = "\n    Você observa a armadura. Ela contém runas e outros símbolos que você não consegue decifrar. Isso foi uma perda de tempo, você pensa.\n";
+                while (texto2[i] != '\0') {
+                    printf("%c", texto[i]); 
+                    Sleep(25); 
+                    i++;
+                }
+            i = 0;
             return p1();
         }
         else {
-            printf("    Você observa armadura. Runas e outros símbolos familiares estão escritos no latão. Com alguns poucos segundos, você percebe que a armadura tem um feitiço que aprisiona um espirito do fogo dentro dele. Com a sua alta inteligência, você pega o pote de água podre no objeto de metal. O som de um grito estridente é ouvido, junto com um espectro laranja rapidamente saindo da sua prisão. A porta da dua cela abre.\n");
+            char texto2[] = "    \nVocê observa armadura. Runas e outros símbolos familiares estão escritos no latão. Com alguns poucos segundos, você percebe que a armadura tem um feitiço que aprisiona um espirito do fogo dentro dele. Com a sua alta inteligência, você pega o pote de água podre no objeto de metal. O som de um grito estridente é ouvido, junto com um espectro laranja rapidamente saindo da sua prisão. A porta da dua cela abre.\n";
+            while (texto2[i] != '\0') {
+                printf("%c", texto2[i]); 
+                Sleep(25); 
+                i++;
+            }
             return p2();
 
         }
     }
     else if(esc == 3) {
-        if (pers ==1) {
-            printf("    Você dá um soco na armadura, e, de repente, ela se levanta e se movimenta, como se estivesse viva. Graças a sua grande proeza em combate e grande coragem, você consegue derrotá-la, com o espírito dentro dela fugindo por medo da sua grande força bruta. Mesmo sendo vitoriosa, você perde -1 de PONTOS DE VIDA, devido ao intenso combate. a porta e da sua cela abre, porém, antes de sair da cela, você pega a espada da armadura caída.\n");
+        if (pers == 1) {
+            char texto2[] = "    Você dá um soco na armadura, e, de repente, ela se levanta e se movimenta, como se estivesse viva. Graças a sua grande proeza em combate e grande coragem, você consegue derrotá-la, com o espírito dentro dela fugindo por medo da sua grande força bruta. Mesmo sendo vitoriosa, você perde -1 de PONTOS DE VIDA, devido ao intenso combate. a porta e da sua cela abre, porém, antes de sair da cela, você pega a espada da armadura caída.\n";
+            while (texto2[i] != '\0') {
+                printf("%c", texto2[i]); 
+                Sleep(25); 
+                i++;
+            }
             vida -= 1;
             return p2();
 
         }
         else {
-            printf("    Com o máximo das suas forças, você dá um leve soco no objeto de metal. A armadura acorda, como se estivesse viva. Com o medo tomando conta do seu corpo, você fica paralisada enquanto a armadura viva lança uma grande bola de fogo em sua direção.");
+            char texto2[] = "    Com o máximo das suas forças, você dá um leve soco no objeto de metal. A armadura acorda, como se estivesse viva. Com o medo tomando conta do seu corpo, você fica paralisada enquanto a armadura viva lança uma grande bola de fogo em sua direção.\n";
+            while (texto2[i] != '\0') {
+                printf("%c", texto2[i]); 
+                Sleep(25); 
+                i++;
+            }
             return gameover();
 
         }
@@ -99,35 +142,58 @@ int p1(){
 
 int introducao() {
     if (pers == 1) {
-        printf("    Seu nome é Saori, você se depara presa em uma cela escura.    \n mesmo com a sua mente embaçada e dor de cabeça latejante, você tenta se lembrar o motivo de por que você está aprisionada…\n");
-        printf("    Você estava caminhando no mercado da sua vila, Genipaúba, observando as crianças brincando nas ruas lotadas.    \n você acabou de retornar de uma missão difícil, em que você derrotou uma bruxa maligna na floresta, que estava aterrorizando a população local.    \n No canto de seus olhos, você olha uma criança chorando, correndo para um beco escuro. Sem pensar duas vezes, você corre em direção dela. Aquele local não é seguro para um ser tão vulnerável. Entrando no beco, você depara a criança imóvel, com as costas viradas a você.\n    Tentativamente, você se aproxima, e de repente, a pequena figura se transforma em uma mulher, de aparência vil.    \n Antes de você reagir, ela assopra um pó brilhante em sua direção, e sua consciência começa a desaparecer, entrando em um sono inquieto.\n");
+        char texto[] = "    Seu nome é Saori, você se depara presa em uma cela escura.    \n mesmo com a sua mente embaçada e dor de cabeça latejante, você tenta se lembrar o motivo de por que você está aprisionada…\n    Você estava caminhando no mercado da sua vila, Genipaúba, observando as crianças brincando nas ruas lotadas.    \n você acabou de retornar de uma missão difícil, em que você derrotou uma bruxa maligna na floresta, que estava aterrorizando a população local.    \n No canto de seus olhos, você olha uma criança chorando, correndo para um beco escuro. Sem pensar duas vezes, você corre em direção dela. Aquele local não é seguro para um ser tão vulnerável. Entrando no beco, você depara a criança imóvel, com as costas viradas a você.\n    Tentativamente, você se aproxima, e de repente, a pequena figura se transforma em uma mulher, de aparência vil.    \n Antes de você reagir, ela assopra um pó brilhante em sua direção, e sua consciência começa a desaparecer, entrando em um sono inquieto.\n";
+        int i = 0;
+        while (texto[i] != '\0') {
+        printf("%c", texto[i]); 
+        Sleep(25); 
+        i++;
+    }
         return p1();
     }
     else {
-        printf("    Seu nome é Ygona, você se depara presa em uma cela escura. mesmo com a sua mente embaçada e dor de cabeça latejante, você tenta se lembrar o motivo de por que você está aprisionada…\n");
-        printf("    Ygona era parte do conselho das bruxas, autoridade coletiva máxima da sociedade bruxa, porém, após se posicionar como opositora do regime segregacionista e totalitário das bruxas de sangue, foi presa e utilizada como cobaia dos experimentos conduzidos secretamente pelo regime.");
+        char texto[] = "    Seu nome é Ygona, você se depara presa em uma cela escura. mesmo com a sua mente embaçada e dor de cabeça latejante, você tenta se lembrar o motivo de por que você está aprisionada…\n    Ygona era parte do conselho das bruxas, autoridade coletiva máxima da sociedade bruxa, porém, após se posicionar como opositora do regime segregacionista e totalitário das bruxas de sangue, foi presa e utilizada como cobaia dos experimentos conduzidos secretamente pelo regime.";
+        int i = 0;
+        while (texto[i] != '\0') {
+        printf("%c", texto[i]); 
+        Sleep(25); 
+        i++;
+    }
         return p1();
     }
 }
 
 int personagem() {
+    char texto[] = "    Escolha sua personagem: \n    1. Saori:\n    7 PONTOS DE VIDA. Força bruta. bons reflexos. Baixa inteligência. Bruta. Explosiva\n    2. Ygona\n    3 PONTOS DE VIDA. Magia. Alta inteligência. Força e reflexos ruins. alto carisma. Furtiva\n >>> ";
+    int i = 0;
     int esc;
-    printf("    Escolha sua personagem: \n");
-    printf("    1. Saori:\n");
-    printf("    7 PONTOS DE VIDA. Força bruta. bons reflexos. Baixa inteligência. Bruta. Explosiva\n");
-    printf("    2. Ygona\n");
-    printf("    3 PONTOS DE VIDA. Magia. Alta inteligência. Força e reflexos ruins. alto carisma. Furtiva\n >>> "); 
+    while (texto[i] != '\0') {
+        printf("%c", texto[i]); 
+        Sleep(25); 
+        i++;
+    }
+    i = 0;
     scanf("%d", &esc);
     escolha2(esc);
      if (esc == 1) {
-        printf("    Sua personagem é: Saori\n");
+        char texto2[] = "    Sua personagem é: Saori\n";
+        while (texto2[i] != '\0') {
+        printf("%c", texto2[i]); 
+        Sleep(25); 
+        i++;
+    }
         pers = 1;
         vida = 7;
         return introducao();
         
     }
     else if (esc == 2) {
-        printf("    Sua personagem é: Ygona\n");
+        char texto2[] = "    Sua personagem é: Ygona\n";
+        while (texto2[i] != '\0') {
+        printf("%c", texto2[i]); 
+        Sleep(25); 
+        i++;
+    }
         pers = 2;
         vida = 3;
         return introducao();
@@ -135,16 +201,26 @@ int personagem() {
 }
 
 int main (){
+    
+    char texto[] = "    =======================\n    ======HOLLOW SCAT======\n    =======================\n\n    Você deseja jogar?\n    1. Sim.\n    2. Não.\n>>> ";
+    char texto2[] = "    Começando jogo...\n\n\n\n\n\n\n\n";
+    int i = 0;
+    int o = 0;
     int esc;
-    printf("    =======================\n");
-    printf("    ======HOLLOW SCAT======\n");
-    printf("    =======================\n\n");
-    printf("    Você deseja jogar?\n");
-    printf("    1. Sim.\n    2. Não.\n>>> ");
+while (texto[i] != '\0') {
+        printf("%c", texto[i]); 
+        Sleep(50); 
+        i++;
+    }
+    i = 0;
     scanf("%d", &esc);
     escolha2(esc);
     if (esc == 1) {
-        printf("    Começando jogo...\n\n\n\n\n\n\n\n");
+        while (texto2[i] != '\0') {
+        printf("%c", texto2[i]); 
+        Sleep(50); 
+        i++;
+    }
         return personagem();
         
     }
