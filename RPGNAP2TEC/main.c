@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <windows.h>
 #include <stdlib.h>
-#include <locale.h>
+
 
 int vida;
 int pers = 0;
@@ -47,7 +47,9 @@ int gameover()
 }
 
 int p10() {
-    return 0;
+    while (vida != 0) {
+
+    }
 }
 
 int p9() {
@@ -639,7 +641,6 @@ int personagem()
 
 int main()
 {
-    setlocale(LC_ALL, "Portuguese");
     system("color 90");
     char *texto = "    ================================\n    ======DIVAS IN THE DUNGEON======\n    ================================\n\n    Você deseja jogar?\n    1. Sim.\n    2. Não.\n ";
     char *texto2 = "    Começando jogo...\n\n\n\n\n\n\n\n";
