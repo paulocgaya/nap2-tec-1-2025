@@ -640,7 +640,7 @@ int personagem()
 int main()
 {
     setlocale(LC_ALL, "Portuguese");
-    system("color 93");
+    system("color 90");
     char *texto = "    ================================\n    ======DIVAS IN THE DUNGEON======\n    ================================\n\n    Você deseja jogar?\n    1. Sim.\n    2. Não.\n ";
     char *texto2 = "    Começando jogo...\n\n\n\n\n\n\n\n";
     int esc;
