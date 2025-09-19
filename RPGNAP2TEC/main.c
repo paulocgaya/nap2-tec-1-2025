@@ -58,8 +58,10 @@ int escolha3(int x) {
 }
 int gameover() {
     system("color 43");
+    char* texto = "\n    VOCÊ MORREU!\n Deseja continuar?\n 1. Sim.\n 2. Não\n";
     int esc;
-    printf("\n    VOCÊ MORREU!\n Deseja continuar?\n 1. Sim.\n 2. Não\n >>> ");
+    txto50(texto);
+    printf(">>> ");
     scanf("%d", &esc);
     escolha2(esc);
     if (esc == 1) {
@@ -90,7 +92,7 @@ int p1(){
         escolha3(esc);
 
      if (esc == 1) {
-        char* texto2 = "    \nA 'água' (se você até pode chamar o líquido horroroso disso) tem um gosto terrível, você se esforça o máximo para não vomitar. Porém, o enjoo te enfraquece. -1 DE VIDA\n";
+        char* texto2 = "\n    A 'água' (se você até pode chamar o líquido horroroso disso) tem um gosto terrível, você se esforça o máximo para não vomitar. Porém, o enjoo te enfraquece. -1 DE VIDA\n";
         txto25(texto2);
         vida -= 1;
         return p1();
@@ -102,7 +104,7 @@ int p1(){
              return p1();
         }
         else {
-            char* texto2 = "    \nVocê observa armadura. Runas e outros símbolos familiares estão escritos no latão. Com alguns poucos segundos, você percebe que a armadura tem um feitiço que aprisiona um espirito do fogo dentro dele. Com a sua alta inteligência, você pega o pote de água podre no objeto de metal. O som de um grito estridente é ouvido, junto com um espectro laranja rapidamente saindo da sua prisão. A porta da dua cela abre.\n";
+            char* texto2 = "\n    Você observa armadura. Runas e outros símbolos familiares estão escritos no latão. Com alguns poucos segundos, você percebe que a armadura tem um feitiço que aprisiona um espirito do fogo dentro dele. Com a sua alta inteligência, você pega o pote de água podre no objeto de metal. O som de um grito estridente é ouvido, junto com um espectro laranja rapidamente saindo da sua prisão. A porta da dua cela abre.\n";
             txto25(texto2);
             return p2();
 
@@ -132,14 +134,15 @@ int p1(){
 
 
 int introducao() {
+    system("color 83");
     if (pers == 1) {
-        char* texto = "    Seu nome é Saori, você se depara presa em uma cela escura.    \n mesmo com a sua mente embaçada e dor de cabeça latejante, você tenta se lembrar o motivo de por que você está aprisionada…\n    Você estava caminhando no mercado da sua vila, Genipaúba, observando as crianças brincando nas ruas lotadas.    \n você acabou de retornar de uma missão difícil, em que você derrotou uma bruxa maligna na floresta, que estava aterrorizando a população local.    \n No canto de seus olhos, você olha uma criança chorando, correndo para um beco escuro. Sem pensar duas vezes, você corre em direção dela. Aquele local não é seguro para um ser tão vulnerável. Entrando no beco, você depara a criança imóvel, com as costas viradas a você.\n    Tentativamente, você se aproxima, e de repente, a pequena figura se transforma em uma mulher, de aparência vil.    \n Antes de você reagir, ela assopra um pó brilhante em sua direção, e sua consciência começa a desaparecer, entrando em um sono inquieto.\n";
+        char* texto = "\n    Seu nome é Saori, você se depara presa em uma cela escura.    \n mesmo com a sua mente embaçada e dor de cabeça latejante, você tenta se lembrar o motivo de por que você está aprisionada…\n    Você estava caminhando no mercado da sua vila, Genipaúba, observando as crianças brincando nas ruas lotadas.    \n você acabou de retornar de uma missão difícil, em que você derrotou uma bruxa maligna na floresta, que estava aterrorizando a população local.    \n No canto de seus olhos, você olha uma criança chorando, correndo para um beco escuro. Sem pensar duas vezes, você corre em direção dela. Aquele local não é seguro para um ser tão vulnerável. Entrando no beco, você depara a criança imóvel, com as costas viradas a você.\n    Tentativamente, você se aproxima, e de repente, a pequena figura se transforma em uma mulher, de aparência vil.    \n Antes de você reagir, ela assopra um pó brilhante em sua direção, e sua consciência começa a desaparecer, entrando em um sono inquieto.\n";
         int i = 0;
        txto25(texto);
         return p1();
     }
     else {
-        char* texto = "    Seu nome é Ygona, você se depara presa em uma cela escura. mesmo com a sua mente embaçada e dor de cabeça latejante, você tenta se lembrar o motivo de por que você está aprisionada…\n    Ygona era parte do conselho das bruxas, autoridade coletiva máxima da sociedade bruxa, porém, após se posicionar como opositora do regime segregacionista e totalitário das bruxas de sangue, foi presa e utilizada como cobaia dos experimentos conduzidos secretamente pelo regime.";
+        char* texto = "\n    Seu nome é Ygona, você se depara presa em uma cela escura. mesmo com a sua mente embaçada e dor de cabeça latejante, você tenta se lembrar o motivo de por que você está aprisionada…\n    Ygona era parte do conselho das bruxas, autoridade coletiva máxima da sociedade bruxa, porém, após se posicionar como opositora do regime segregacionista e totalitário das bruxas de sangue, foi presa e utilizada como cobaia dos experimentos conduzidos secretamente pelo regime.";
         int i = 0;
        txto25(texto);
         return p1();
@@ -147,7 +150,7 @@ int introducao() {
 }
 
 int personagem() {
-    char* texto = "    Escolha sua personagem: \n    1. Saori:\n    7 PONTOS DE VIDA. Força bruta. bons reflexos. Baixa inteligência. Bruta. Explosiva\n    2. Ygona\n    3 PONTOS DE VIDA. Magia. Alta inteligência. Força e reflexos ruins. alto carisma. Furtiva\n >>> ";
+    char* texto = "\n    Escolha sua personagem: \n    1. Saori:\n    7 PONTOS DE VIDA. Força bruta. bons reflexos. Baixa inteligência. Bruta. Explosiva\n    2. Ygona\n    3 PONTOS DE VIDA. Magia. Alta inteligência. Força e reflexos ruins. alto carisma. Furtiva\n >>> ";
     int esc;
     txto25(texto);
     scanf("%d", &esc);
@@ -171,10 +174,12 @@ int personagem() {
 
 int main (){
     
-    char* texto = "    =======================\n    ======HOLLOW SCAT======\n    =======================\n\n    Você deseja jogar?\n    1. Sim.\n    2. Não.\n>>> ";
+    system("color 93");
+    char* texto = "    ================================\n    ======DIVAS IN THE DUNGEON======\n    ================================\n\n    Você deseja jogar?\n    1. Sim.\n    2. Não.\n ";
     char* texto2 = "    Começando jogo...\n\n\n\n\n\n\n\n";
     int esc;
     txto50(texto);
+    printf(">>> ");
     scanf("%d", &esc);
     escolha2(esc);
     if (esc == 1) {
