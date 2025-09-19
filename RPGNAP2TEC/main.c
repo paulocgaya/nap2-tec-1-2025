@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <windows.h>
 #include <stdlib.h>
-
+#include <locale.h>
 
 int vida;
 int pers = 0;
@@ -46,63 +46,361 @@ int gameover()
     }
 }
 
-int p10() {
-    while (vida != 0) {
-
+int final1()
+{
+    int esc;
+    char *texto = "\nVocê escapou do reino. FINAL 1.\n";
+    txto50(texto);
+    char *texto2 = "Quer jogar de novo?\n1. Sim\n Não";
+    txto25(texto2);
+    printf(">>> ");
+    scanf("%d", &esc);
+    if (esc == 1)
+    {
+        return main();
+    }
+    else
+    {
+        return 0;
     }
 }
 
-int p9() {
+int final2()
+{
     int esc;
-    while (vida != 0) {
-        if (pers == 1) {
-            char *texto = "\nencruzilhada\n1. direita\n2. reto\n3. esquerda\n";
-            txto25(texto);
-            printf("%d", &esc);
-            if (esc == 1) {
-                char *texto2 = "escolheu direita. morreu";
-                txto25(texto2);
-                return gameover();
-            }
-            else if (esc == 2){
-                char *texto2 = "escolheu reto. vitória";
-                txto25(texto2);
-                vida += 1;
-                return p10();
-            }
-            else {
-                 char *texto2 = "escolheu esquerda. vitória parcial";
-                txto25(texto2);
-                vida -= 1;
-                return p10();
-            }
+    char *texto = "\nVocê foi decapitada. FINAL 2.\n";
+    txto50(texto);
+    char *texto2 = "Quer jogar de novo?\n1. Sim\n Não";
+    txto25(texto2);
+    printf(">>> ");
+    scanf("%d", &esc);
+    if (esc == 1)
+    {
+        return main();
+    }
+    else
+    {
+        return 0;
+    }
+}
 
+int p11b() {
+    return 0;
+}
+
+int p18a2 () {
+
+int esc;
+    while (vida != 0)
+    {
+        char *texto = "\ncruzamento em T\n1. rua direita\n2. rua esquerda\n";
+        txto25(texto);
+        printf(">>> ");
+        scanf("%d", &esc);
+        if (esc == 1)
+        {
+            char *texto2 = "\nvocê entrou para a rua direita. morte";
+            txto25(texto2);
+            return gameover();
         }
-        else {
-            char *texto = "\nencruzilhada\n1. direita\n2. reto\n3. esquerda\n";
-            txto25(texto);
-            printf("%d", &esc);
-            if (esc == 1) {
-                char *texto2 = "escolheu direita. vitoria";
-                txto25(texto2);
-                vida += 1;
-                return p10();
-            }
-            else if (esc == 2){
-                char *texto2 = "escolheu reto. vitória parcial";
-                txto25(texto2);
-                vida -= 1;
-                return p10();
-            }
-            else {
-                 char *texto2 = "escolheu esquerda. morreu";
-                txto25(texto2);
-                return gameover();
-            }
-
+        else
+        {
+            char *texto2 = "\nvocê correu para a rua esquerda.";
+            txto25(texto2);
+            return final1();
         }
     }
-return gameover();
+
+}
+
+int p17a2 () {
+
+int esc;
+    while (vida != 0)
+    {
+        char *texto = "\ncorrendo\n1. correr para o beco\n2. correr para a rua esquerda\n";
+        txto25(texto);
+        printf(">>> ");
+        scanf("%d", &esc);
+        if (esc == 1)
+        {
+            char *texto2 = "\nvocê entrou para o beco. morte";
+            txto25(texto2);
+            return gameover();
+        }
+        else
+        {
+            char *texto2 = "\nvocê correu para a rua.";
+            txto25(texto2);
+            return p18a2();
+        }
+    }
+
+}
+int p17a1()
+{
+    int esc;
+    while (vida != 0)
+    {
+        char *texto = "\nlamina cega\n1. rir\n2. silêncio\n";
+        txto25(texto);
+        printf(">>> ");
+        scanf("%d", &esc);
+        if (esc == 1)
+        {
+            char *texto2 = "\nsvocê riu";
+            txto25(texto2);
+            return final2();
+        }
+        else
+        {
+            char *texto2 = "\nvocê ficou calada.";
+            txto25(texto2);
+            return final2();
+        }
+    }
+}
+
+int p16a()
+{
+    int esc;
+    while (vida != 0)
+    {
+        char *texto = "\ncaminho da execução\n1. se soltar\n2. permanecer\n";
+        txto25(texto);
+        printf(">>> ");
+        scanf("%d", &esc);
+        if (esc == 1)
+        {
+            char *texto2 = "\nse soltou. vitoria";
+            txto25(texto2);
+            return p17a2();
+        }
+        else
+        {
+            char *texto2 = "\npermaneceu. vitoria";
+            txto25(texto2);
+            return p17a1();
+        }
+    }
+}
+
+int p15a()
+{
+    int esc;
+    while (vida != 0)
+    {
+        char *texto = "\ncaminho da execução\n1. se soltar\n2. permanecer\n";
+        txto25(texto);
+        printf(">>> ");
+        scanf("%d", &esc);
+        if (esc == 1)
+        {
+            char *texto2 = "\nse soltou. vitoria";
+            txto25(texto2);
+            return p16a();
+        }
+        else
+        {
+            char *texto2 = "\npermaneceu. morreu";
+            txto25(texto2);
+            return gameover();
+        }
+    }
+}
+
+int p14a()
+{
+    int esc;
+    while (vida != 0)
+    {
+        char *texto = "\npelotão de guardas\n1. lutar\n2. render\n";
+        txto25(texto);
+        printf(">>> ");
+        scanf("%d", &esc);
+        if (esc == 1)
+        {
+            char *texto2 = "\nlutou. morreu";
+            txto25(texto2);
+            return gameover();
+        }
+        else
+        {
+            char *texto2 = "\nrendeu. vitoria";
+            txto25(texto2);
+            return p15a();
+        }
+    }
+}
+
+int p13a()
+{
+    int esc;
+    while (vida != 0)
+    {
+        char *texto = "\nescadas\n1. não subir\n2. subir\n";
+        txto25(texto);
+        printf(">>> ");
+        scanf("%d", &esc);
+        if (esc == 1)
+        {
+            char *texto2 = "\nnão subiu. morreu";
+            txto25(texto2);
+            return gameover();
+        }
+        else
+        {
+            char *texto2 = "\nnsubiu. vitoria";
+            txto25(texto2);
+            return p14a();
+        }
+    }
+}
+
+int p12a()
+{
+    int esc;
+    while (vida != 0)
+    {
+        char *texto = "\nsangue de goblin azul\n1. tomar\n2. ignorar";
+        txto25(texto);
+        printf(">>> ");
+        scanf("%d", &esc);
+        if (esc == 1)
+        {
+            if (pers == 1)
+            {
+                char *texto2 = "\nvocê bebeu. vida curada";
+                txto25(texto2);
+                vida += 2;
+                return p13a();
+            }
+            else
+            {
+                char *texto2 = "\nvocê bebeu. perdeu vida";
+                txto25(texto2);
+                vida -= 1;
+                return p13a();
+            }
+        }
+        else
+        {
+            char *texto2 = "\nvocê não bebeu.";
+            txto25(texto2);
+            return p13a();
+        }
+    }
+    return gameover();
+}
+
+int p11a()
+{
+    int esc;
+    while (vida != 0)
+    {
+        char *texto = "\nporta de ferro\n1. arrombar\n2. não arrombar\n";
+        txto25(texto);
+        printf(">>> ");
+        scanf("%d", &esc);
+        if (esc == 1)
+        {
+            char *texto2 = "\nvocê arrombou a porta. falha";
+            txto25(texto2);
+            return gameover();
+        }
+        else
+        {
+            char *texto2 = "\n você não arrombou. vitoria";
+            txto25(texto2);
+            return p12a();
+        }
+    }
+    gameover();
+}
+
+int p10()
+{
+    int esc;
+    while (vida != 0)
+    {
+        char *texto = "\ncorpo com documento\n1. não ler\n2. ler\n";
+        txto25(texto);
+        printf(">>> ");
+        scanf("%d", &esc);
+        if (esc == 1)
+        {
+            char *texto2 = "\nvocê não leu";
+            txto25(texto2);
+            return p11a();
+        }
+        else
+        {
+            char *texto2 = "\nvocê leu.";
+            txto25(texto2);
+            return p11b();
+        }
+    }
+}
+
+int p9()
+{
+    int esc;
+    while (vida != 0)
+    {
+        if (pers == 1)
+        {
+            char *texto = "\nencruzilhada\n1. direita\n2. reto\n3. esquerda\n";
+            txto25(texto);
+            printf("%d", &esc);
+            if (esc == 1)
+            {
+                char *texto2 = "\nescolheu direita. morreu";
+                txto25(texto2);
+                return gameover();
+            }
+            else if (esc == 2)
+            {
+                char *texto2 = "\nescolheu reto. vitória";
+                txto25(texto2);
+                vida += 1;
+                return p10();
+            }
+            else
+            {
+                char *texto2 = "\nescolheu esquerda. vitória parcial";
+                txto25(texto2);
+                vida -= 1;
+                return p10();
+            }
+        }
+        else
+        {
+            char *texto = "\nencruzilhada\n1. direita\n2. reto\n3. esquerda\n";
+            txto25(texto);
+            printf("%d", &esc);
+            if (esc == 1)
+            {
+                char *texto2 = "\nescolheu direita. vitoria";
+                txto25(texto2);
+                vida += 1;
+                return p10();
+            }
+            else if (esc == 2)
+            {
+                char *texto2 = "\nescolheu reto. vitória parcial";
+                txto25(texto2);
+                vida -= 1;
+                return p10();
+            }
+            else
+            {
+                char *texto2 = "\nescolheu esquerda. morreu";
+                txto25(texto2);
+                return gameover();
+            }
+        }
+    }
+    return gameover();
 }
 
 int p8()
@@ -116,13 +414,13 @@ int p8()
         scanf("%d", &esc);
         if (esc == 1)
         {
-            char *texto2 = "entrou no esgoto. vitória";
+            char *texto2 = "\nentrou no esgoto. vitória";
             txto25(texto2);
             return p9();
         }
         else
         {
-            char *texto2 = "não entrou no esgoto. morreu";
+            char *texto2 = "\nnão entrou no esgoto. morreu";
             txto25(texto2);
             return gameover();
         }
@@ -139,19 +437,19 @@ int p7y2()
         scanf("%d", &esc);
         if (esc == 1)
         {
-            char *texto2 = "usou magia negra. vitória";
+            char *texto2 = "\nusou magia negra. vitória";
             txto25(texto2);
             return p8();
         }
         else if (esc == 2)
         {
-            char *texto2 = "feitiço simples. morreu";
+            char *texto2 = "\nfeitiço simples. morreu";
             txto25(texto2);
             return gameover();
         }
         else
         {
-            char *texto2 = "feitiço de cura. morreu";
+            char *texto2 = "\nfeitiço de cura. morreu";
             txto25(texto2);
             return gameover();
         }
@@ -170,13 +468,13 @@ int p7y()
         scanf("%d", &esc);
         if (esc == 1)
         {
-            char *texto2 = "escolheu porta direita. vitória parcial";
+            char *texto2 = "\nescolheu porta direita. vitória parcial";
             vida -= 1;
             return p7y2();
         }
         else
         {
-            char *texto2 = "escolheu porta esquerda. vitória";
+            char *texto2 = "\nescolheu porta esquerda. vitória";
             return p7y2();
         }
     }
@@ -194,13 +492,13 @@ int p7()
         printf(">>> ");
         if (esc == 1)
         {
-            char *texto2 = "tentou salvar. morreu";
+            char *texto2 = "\ntentou salvar. morreu";
             txto25(texto2);
             return gameover();
         }
         else if (esc == 2)
         {
-            char *texto2 = "se permitiu chorar";
+            char *texto2 = "\nse permitiu chorar";
             txto25(texto2);
             vida += 1;
             if (pers == 2)
@@ -214,7 +512,7 @@ int p7()
         }
         else
         {
-            char *texto2 = "ignorou";
+            char *texto2 = "\nignorou";
             txto25(texto2);
             if (pers == 2)
             {
@@ -242,19 +540,19 @@ int p6()
             scanf("%d", &esc);
             if (esc == 1)
             {
-                char *texto2 = "morte";
+                char *texto2 = "\nmorte";
                 txto25(texto2);
                 return gameover();
             }
             if (esc == 2)
             {
-                char *texto2 = "pulou na cabeça";
+                char *texto2 = "\npulou na cabeça";
                 txto25(texto2);
                 return p7();
             }
             else
             {
-                char *texto2 = "destruiu os pés";
+                char *texto2 = "\ndestruiu os pés";
                 txto25(texto2);
                 return p7();
             }
@@ -267,19 +565,19 @@ int p6()
             scanf("%d", &esc);
             if (esc == 1)
             {
-                char *texto2 = "vitoria";
+                char *texto2 = "\nvitoria";
                 txto25(texto2);
                 return p7();
             }
             else if (esc == 2)
             {
-                char *texto2 = "usou feitiço de cura\n morreu";
+                char *texto2 = "\nusou feitiço de cura\n morreu";
                 txto25(texto2);
                 return gameover();
             }
             else
             {
-                char *texto2 = "feitiço lento\n morreu";
+                char *texto2 = "\nfeitiço lento\n morreu";
                 txto25(texto2);
             }
         }
@@ -294,52 +592,52 @@ int p5()
     {
         if (pers == 1)
         {
-            char *texto = "\encruzilhada\n1. A\n2. B\n3. C\n4. D\n5. E ";
+            char *texto = "\nencruzilhada\n1. A\n2. B\n3. C\n4. D\n5. E ";
             txto25(texto);
             printf(">>> ");
             scanf("%d", &esc);
             if (esc == 1)
             {
-                char *texto2 = "vitoria parcial";
+                char *texto2 = "\nvitoria parcial";
                 txto25(texto2);
                 vida -= 1;
                 return p6();
             }
             else if (esc == 2)
             {
-                char *texto2 = "vitoria";
+                char *texto2 = "\nvitoria";
                 txto25(texto2);
                 return p6();
             }
             else
             {
-                char *texto2 = "falha";
+                char *texto2 = "\nfalha";
                 txto25(texto2);
                 return gameover();
             }
         }
         else
         {
-            char *texto = "\encruzilhada\n1. A\n2. B\n3. C\n4. D\n5. E ";
+            char *texto = "\nencruzilhada\n1. A\n2. B\n3. C\n4. D\n5. E ";
             txto25(texto);
             printf(">>> ");
             scanf("%d", &esc);
             if (esc == 4)
             {
-                char *texto2 = "vitoria parcial";
+                char *texto2 = "\nvitoria parcial";
                 txto25(texto2);
                 vida -= 1;
                 return p6();
             }
             else if (esc == 5)
             {
-                char *texto2 = "vitoria";
+                char *texto2 = "\nvitoria";
                 txto25(texto2);
                 return p6();
             }
             else
             {
-                char *texto2 = "falha";
+                char *texto2 = "\nfalha";
                 txto25(texto2);
                 return gameover();
             }
@@ -351,20 +649,21 @@ int p5()
 int p4()
 {
     int esc;
-    char *texto = "prisoneiro miserável\n1. soltar\n2. ignorar\n";
+    char *texto = "\nprisoneiro miserável\n1. soltar\n2. ignorar\n";
     txto25(texto);
     printf(">>> ");
     scanf("%d", &esc);
     if (esc == 1)
     {
-        char *texto2 = "q bom né";
+        char *texto2 = "\nq bom né";
         txto25(texto2);
         vida += 1;
         return p5();
     }
     else
     {
-        char *texto2 = "ok :(";
+        char *texto2 = "\nok :(";
+        txto25(texto2);
         return p5();
     }
 }
@@ -376,7 +675,7 @@ int p3()
     {
         if (pers == 1)
         {
-            char *texto = "guarda\n 1.calcanhar\n 2.cabeça\n 3. tórax.\n";
+            char *texto = "\nguarda\n 1.calcanhar\n 2.cabeça\n 3. tórax.\n";
             txto25(texto);
             printf(">>> ");
             scanf("%d", &esc);
@@ -420,7 +719,7 @@ int p3()
             }
             else
             {
-                char *texto = "vitória parcial -1 de vida";
+                char *texto = "\nvitória parcial -1 de vida";
                 txto25(texto);
                 vida -= 1;
                 return p4();
@@ -641,6 +940,7 @@ int personagem()
 
 int main()
 {
+    setlocale(LC_ALL, "Portuguese");
     system("color 90");
     char *texto = "    ================================\n    ======DIVAS IN THE DUNGEON======\n    ================================\n\n    Você deseja jogar?\n    1. Sim.\n    2. Não.\n ";
     char *texto2 = "    Começando jogo...\n\n\n\n\n\n\n\n";
