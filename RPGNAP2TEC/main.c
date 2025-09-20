@@ -30,7 +30,7 @@ int txto50(char *x)
 
 int gameover()
 {
-    system("color 43");
+    system("color 47");
     char *texto = "\n    VOCÊ MORREU!\n Deseja continuar?\n 1. Sim.\n 2. Não\n";
     int esc;
     txto50(texto);
@@ -48,6 +48,7 @@ int gameover()
 
 int final1()
 {
+    system("color 10");
     int esc;
     char *texto = "\nVocê escapou do reino. FINAL 1.\n";
     txto50(texto);
@@ -67,6 +68,7 @@ int final1()
 
 int final2()
 {
+    system("color 47");
     int esc;
     char *texto = "\nVocê foi decapitada. FINAL 2.\n";
     txto50(texto);
@@ -84,8 +86,274 @@ int final2()
     }
 }
 
-int p11b() {
-    return 0;
+int final3()
+{
+    system("color 27");
+    int esc;
+    char *texto = "\nO império das bruxas acabou. FINAL 3.\n";
+    txto50(texto);
+    char *texto2 = "Quer jogar de novo?\n1. Sim\n Não";
+    txto25(texto2);
+    printf(">>> ");
+    scanf("%d", &esc);
+    if (esc == 1)
+    {
+        return main();
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int final4()
+{
+    system("color 57");
+    int esc;
+    char *texto = "\nVocê virou a rainha das bruxas. FINAL 4.\n";
+    txto50(texto);
+    char *texto2 = "Quer jogar de novo?\n1. Sim\n Não";
+    txto25(texto2);
+    printf(">>> ");
+    scanf("%d", &esc);
+    if (esc == 1)
+    {
+        return main();
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int p17b() {
+    int esc;
+    char *texto = "\nbruxa está morta?\n1. quebrar coroa\n2. usar coroa\n";
+    txto25(texto);
+    printf(">>> ");
+    scanf("%d", &esc);
+    if (esc == 1) {
+                char *texto2 = "quebrou coroa.";
+                txto25(texto2);
+                return final3();
+            }
+            else {
+                char *texto2 = "usou a coroa";
+                txto25(texto2);
+                return final4();
+            }
+}
+
+int p16b() {
+    int esc;
+    char *texto = "\nacertar bruxa onde?\n1. na testa\n2. pescoço\n";
+    txto25(texto);
+    printf(">>> ");
+    scanf("%d", &esc);
+    if (esc == 1) {
+                char *texto2 = "acertou na testa. vitoria";
+                txto25(texto2);
+                return p17b();
+            }
+            else {
+                char *texto2 = "acertou o pescoço. você morreu";
+                txto25(texto2);
+                return gameover();
+            }
+        
+}
+
+int p15b() {
+    int esc;
+    while (vida != 0) {
+        if (pers == 1) {
+            char *texto = "\nsala da bruxa superior2. batalha\n1. desviar\n2. rebater\n";
+            txto25(texto);
+            printf(">>> ");
+            scanf("%d", &esc);
+            if (esc == 1) {
+                char *texto2 = "desviou. morreu";
+                txto25(texto2);
+                return gameover();
+            }
+            else {
+                char *texto2 = "rebateu. vitoria";
+                txto25(texto2);
+                return p16b();
+            }
+        }
+        else{
+            char *texto = "\nsala da bruxa superior2. batalha\n1. desviar\n2. rebater\n";
+            txto25(texto);
+            printf(">>> ");
+            scanf("%d", &esc);
+            if (esc == 1) {
+                char *texto2 = "desviou. vitoria";
+                txto25(texto2);
+                return p16b();
+            }
+            else {
+                char *texto2 = "rebateu. morreu";
+                txto25(texto2);
+                return gameover();
+            }
+        }
+    }
+return gameover();
+}
+
+int p14b() {
+     int esc;
+    while (vida != 0) {
+        if (pers == 1) {
+            char *texto = "\nsala da bruxa superior. batalha\n1. desviar\n2. rebater\n";
+            txto25(texto);
+            printf(">>> ");
+            scanf("%d", &esc);
+            if (esc == 1) {
+                char *texto2 = "desviou. vitoria";
+                txto25(texto2);
+                return p15b();
+            }
+            else {
+                char *texto2 = "rebateu. morreu";
+                txto25(texto2);
+                return gameover();
+            }
+        }
+        else{
+            char *texto = "\nsala da bruxa superior. batalha\n1. desviar\n2. rebater\n";
+            txto25(texto);
+            printf(">>> ");
+            scanf("%d", &esc);
+            if (esc == 1) {
+                char *texto2 = "desviou. morreu";
+                txto25(texto2);
+                return gameover();
+            }
+            else {
+                char *texto2 = "rebateu. vitoria";
+                txto25(texto2);
+                return p15b();
+            }
+        }
+    }
+return gameover();
+}
+
+int p13b() {
+    int esc;
+    while (vida != 0) {
+        if (pers == 1) {
+            char *texto = "\nlatrina. achou o arco e flechas. batalha\n1. atirar em cada um dos guardas\n2. atirar na sustentação do candelabro\n";
+            txto25(texto);
+            printf(">>> ");
+            scanf("%d", &esc);
+            if (esc == 1) {
+                char *texto2 = "tentou atirar nos guardas. morreu";
+                txto25(texto2);
+                return gameover();
+            }
+            else {
+                char *texto2 = "candelabro caiu. vitoria";
+                txto25(texto2);
+                return p14b();
+            }
+        }
+        else{
+            char *texto = "\nlatrina. achou varinha ancestral. batalha\n1. derrubar candelabro\n2. magia negra nos guardas\n";
+            txto25(texto);
+            printf(">>> ");
+            scanf("%d", &esc);
+            if (esc == 1) {
+                char *texto2 = "arcetou candelabro. vitoria";
+                txto25(texto2);
+                return p14b();
+            }
+            else {
+                char *texto2 = "tentou usar magia negra nos guardas. morreu";
+                txto25(texto2);
+                return gameover();
+            }
+        }
+    }
+return gameover();
+
+}
+
+int p12b() {
+    int esc;
+    while (vida != 0) {
+        char *texto = "\nescadas\n1. subir\n2. não subir\n";
+        txto25(texto);
+        printf(">>> ");
+        scanf("%d", &esc);
+        if (esc == 1)
+        {
+            char *texto2 = "\nlsubiu. vitoria";
+            txto25(texto2);
+            return p13b();
+        }
+        else
+        {
+            char *texto2 = "\nnão subiu. morte";
+            txto25(texto2);
+            return gameover();
+        }
+    return gamover();
+        }
+}
+
+
+
+int p11b() { //rota com a nota lida
+    int esc;
+    while (vida != 0) {
+        if (pers == 1) {
+            char *texto = "\nbatalha\n1. acertar pescoço\n2. acertar olho\n3. acertar tentaculo\n";
+            txto25(texto);
+            printf(">>> ");
+            scanf("%d", &esc);
+            if (esc == 1) {
+                char *texto2 = "acertou pescoço. morreu";
+                txto25(texto2);
+                return gameover();
+            }
+            else if (esc == 2) {
+                char *texto2 = "acertou olho. vitoria";
+                txto25(texto2);
+                return p12b();
+            }
+            else {
+                char *texto2 = "acertou tentaculo. vitoria parcial";
+                txto25(texto2);
+                vida -= 1;
+                return p12b();
+            }
+        }
+        else{
+            char *texto = "\nbatalha\n1. magia negra\n2. feitiço de cura\n3. feitiço rápido\n";
+            txto25(texto);
+            printf(">>> ");
+            scanf("%d", &esc);
+            if (esc == 1) {
+                char *texto2 = "magia negra. morreu";
+                txto25(texto2);
+                return gameover();
+            }
+            else if (esc == 2) {
+                char *texto2 = "feitiço de cura. morreu";
+                txto25(texto2);
+                return gameover();
+            }
+            else {
+                char *texto2 = "feitiço rápido. vitoria";
+                txto25(texto2);
+                return p12b();
+            }
+        }
+    }
+return gameover();
 }
 
 int p18a2 () {
@@ -293,7 +561,7 @@ int p12a()
     return gameover();
 }
 
-int p11a()
+int p11a() // rota sem ler a nota
 {
     int esc;
     while (vida != 0)
