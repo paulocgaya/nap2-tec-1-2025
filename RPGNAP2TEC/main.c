@@ -860,7 +860,7 @@ int p5()
     {
         if (pers == 1)
         {
-            char *texto = "\nVocê sevê diante de uma encruzihada com 5 opções que seguem a rosa dos ventos:\n1. O\n2. NO\n3. N\n4. NE\n5. L \n";
+            char *texto = "\nVocê sevê diante de uma encruzihada com 5 opções que seguem a rosa dos ventos:\n1. A\n2. B\n3. C\n4. D\n5. E \n";
             txto25(texto);
             printf(">>> ");
             scanf("%d", &esc);
@@ -886,7 +886,7 @@ int p5()
         }
         else
         {
-            char *texto = "\n Ygona se vê diante de uma encruzihada com 5 opções que seguem a rosa dos ventos:\n1. O\n2. NO\n3. N\n4. NE\n5. L\n";
+            char *texto = "\nVocê se vê diante de uma encruzihada com 5 opções que seguem a rosa dos ventos:\n1. O\n2. NO\n3. N\n4. NE\n5. L\n";
             txto25(texto);
             printf(">>> ");
             scanf("%d", &esc);
