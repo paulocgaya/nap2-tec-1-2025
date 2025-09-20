@@ -128,9 +128,9 @@ int final4()
 
 int p17b() {
     int esc;
-    char *texto = "\n ZENVELLI ESTÁ MORTA!\n Mas....... O que você fará com a coroa?\n1. quebrar coroa\n2. usar coroa\n";
+    char *texto = "\n ZENVELLI ESTÝ MORTA!\n Mas....... O que você fará com a coroa?\n1. quebrar coroa\n2. usar coroa\n";
     txto25(texto);
-    printf(">>> ");
+    printf("Você tem: %d de VIDA\n>>> ", vida);
     scanf("%d", &esc);
     if (esc == 1) {
                 char *texto2 = "\n Você quebrou a coroa\n";
@@ -148,7 +148,7 @@ int p16b() {
     int esc;
     char *texto = "\n Zenvelli agora está caída no chão, debilitada, aonde você a acertará?\n1. na testa\n2. pescoço\n";
     txto25(texto);
-    printf(">>> ");
+    printf("Você tem: %d de VIDA\n>>> ", vida);
     scanf("%d", &esc);
     if (esc == 1) {
                 char *texto2 = "\n Você acerta Zenvelli na testa com seu artefato, exatamente no ponto fraco da bruxa\n";
@@ -169,7 +169,7 @@ int p15b() {
         if (pers == 1) {
             char *texto = "\n Depois do ataque malsucedido, Zenvelli exala bolas de escuridão em direção à sua oponente\n o que Saori fará?\n1. desviar\n2. rebater\n";
             txto25(texto);
-            printf(">>> ");
+            printf("Você tem: %d de VIDA\n>>> ", vida);
             scanf("%d", &esc);
             if (esc == 1) {
                 char *texto2 = "\n No momento que a guerreira desvia de uma das bolas, outra bola a acerta diretamente\n não há escapatória\n";
@@ -185,7 +185,7 @@ int p15b() {
         else{
             char *texto = "\n Depois do ataque malsucedido, Zenvelli exala espíritos obscuros em direção à sua oponente\n o que Ygona fará?\n1. desviar\n2. rebater\n";
             txto25(texto);
-            printf(">>> ");
+            printf("Você tem: %d de VIDA\n>>> ", vida);
             scanf("%d", &esc);
             if (esc == 1) {
                 char *texto2 = "\n Ygona, com o auxílio de sua varinha, consegue desviar dos ataques da bruxa\n Então Ygona resolve atacar Zenvelli diretamente com o poder da luz\n";
@@ -208,7 +208,7 @@ int p14b() {
         if (pers == 1) {
             char *texto = "\n Chegando na sala de Zenvelli, a bruxa maligna se transforma em um enorme ser das trevas\n A partir disso a bruxa começa a lançar os espinhos das sombras\n O que Saori fará?\n1. desviar\n2. rebater\n";
             txto25(texto);
-            printf(">>> ");
+            printf("Você tem: %d de VIDA\n>>> ", vida);
             scanf("%d", &esc);
             if (esc == 1) {
                 char *texto2 = "\n Saori desvia dos espinhos da bruxa e consegue se manter firme para o próximo ataque\n";
@@ -224,7 +224,7 @@ int p14b() {
         else{
             char *texto = "\n Chegando na sala de Zenvelli, a bruxa maligna se transforma em um enorme ser das trevas\n A partir disso a bruxa começa lança o grito das sombras\n O que Ygona fará?\n1. desviar\n2. rebater\n";
             txto25(texto);
-            printf(">>> ");
+            printf("Você tem: %d de VIDA\n>>> ", vida);
             scanf("%d", &esc);
             if (esc == 1) {
                 char *texto2 = "\n Não há tempo para desviar de um ataque desta magnitude\n Ygona acaba sendo atingida em cheio\n";
@@ -247,7 +247,7 @@ int p13b() {
         if (pers == 1) {
             char *texto = "\n Ao sair da latrina, você vê um arco e flecha no chão.\n Saori então sai e vê que está na parte de cima do salão aonde fica a porta de acesso à sala de Zenvelli\n Abaixo você vê um pelotçao de guardas protegendo o portão para a bruxa maligna\n Contudo, você percebe um imenso candelabro acima dos guardas\n O que você fará?\n1. atirar em cada um dos guardas\n2. atirar na sustentação do candelabro\n";
             txto25(texto);
-            printf(">>> ");
+            printf("Você tem: %d de VIDA\n>>> ", vida);
             scanf("%d", &esc);
             if (esc == 1) {
                 char *texto2 = "\n A baixa inteligência de Saori se extrapola e ela tenta atirar em cada um dos 50 guardas do pelotão\n A seleção natural fez seu papel\n";
@@ -263,7 +263,7 @@ int p13b() {
         else{
             char *texto = "\n Ao sair da latrina, você vê uma varinha antiga no chão\n mas ao pegar você sente o poder ancestral contido nela\n Ao sair você percebe que está na parte superior de um salão\n e logo abaixo se encontra um pelotão de guardas protegendo o portão da sala de Zenvelli\n Contudo, logo acima você vê um imenso candelabro bem acima dos guardas\n O que você fará?\n1. derrubar candelabro\n2. magia negra nos guardas\n";
             txto25(texto);
-            printf(">>> ");
+            printf("Você tem: %d de VIDA\n>>> ", vida);
             scanf("%d", &esc);
             if (esc == 1) {
                 char *texto2 = "\n Ygona atira nbo candelabro imenso e o derruba no pelotão, acabando com todos de uma só vez e libera o acesso a Zenvelli\n";
@@ -286,7 +286,7 @@ int p12b() {
     while (vida != 0) {
         char *texto = "\n Você caminha adiante após destruir a serpente\n Logo à frente você encontra uma escada levando a um buraco aberto\n O que você fará?\n1. subir\n2. não subir\n";
         txto25(texto);
-        printf(">>> ");
+        printf("Você tem: %d de VIDA\n>>> ", vida);
         scanf("%d", &esc);
         if (esc == 1)
         {
@@ -312,7 +312,7 @@ int p11b() { //rota com a nota lida
         if (pers == 1) {
             char *texto = "\n Saori segue o caminho e encontra a serpente mutante, com duas cabeças e cauda de tentáculo, Decravack,\n cria do próprio demônio homônimo.\n Agora a guerreira deve escolher onde irá deferir sua fúria\n1. acertar pescoço\n2. acertar olho\n3. acertar tentaculo\n";
             txto25(texto);
-            printf(">>> ");
+            printf("Você tem: %d de VIDA\n>>> ", vida);
             scanf("%d", &esc);
             if (esc == 1) {
                 char *texto2 = "\n A guerreira vai em direção a uma das cabeças, mas logo a segunda reage com uma mordida devastadora\n que parte Saori em 2\n";
@@ -334,7 +334,7 @@ int p11b() { //rota com a nota lida
         else{
             char *texto = "\n Ygona segue o caminho e encontra a serpente mutante, com duas cabeças e cauda de tentáculo, Decravack,\n cria do próprio demônio homônimo.\n Agora a bruxa deve escolher como irá deferir sua fúria\n1. magia negra\n2. feitiço de cura\n3. feitiço de luz\n";
             txto25(texto);
-            printf(">>> ");
+            printf("Você tem: %d de VIDA\n>>> ", vida);
             scanf("%d", &esc);
             if (esc == 1) {
                 char *texto2 = "\n Ygona usa de magia negrapara mandar a criatura para o seu lugar.\n Porém, a serpente absorve o poder e rabate a magia pra a bruxa, selando seu destino\n";
@@ -363,7 +363,7 @@ int esc;
     {
         char *texto = "\n Seguindo pela rua você chega a um cruzamento em T, com apenas duas saídas para você\n1. Rua direita\n2. Rua esquerda\n";
         txto25(texto);
-        printf(">>> ");
+        printf("Você tem: %d de VIDA\n>>> ", vida);
         scanf("%d", &esc);
         if (esc == 1)
         {
@@ -388,7 +388,7 @@ int esc;
     {
         char *texto = "\n Agora você se encontra correndo pelas vias sujas e lamacentas de sacraamenthar em fuga da guarda real.\n Você percebe duas possibilidades:\n1. Correr para o beco\n2. Correr para a rua esquerda\n";
         txto25(texto);
-        printf(">>> ");
+        printf("Você tem: %d de VIDA\n>>> ", vida);
         scanf("%d", &esc);
         if (esc == 1)
         {
@@ -412,7 +412,7 @@ int p17a1()
     {
         char *texto = "\n A lâmina cai, mas não te machuca pois está cega!\n Quel será sua reação?\n1. rir\n2. silêncio\n";
         txto25(texto);
-        printf(">>> ");
+        printf("Você tem: %d de VIDA\n>>> ", vida);
         scanf("%d", &esc);
         if (esc == 1)
         {
@@ -436,7 +436,7 @@ int p16a()
     {
         char *texto = "\n Agora você se encontra com a cabeça posicionada na guilhotina\n o que você vai fazer agora?\n1. Tentar se soltar\n2. permanecer\n";
         txto25(texto);
-        printf(">>> ");
+        printf("Você tem: %d de VIDA\n>>> ", vida);
         scanf("%d", &esc);
         if (esc == 1)
         {
@@ -460,7 +460,7 @@ int p15a()
     {
         char *texto = "\n Depois de algumas horas na masmorra, os guardas chegam para lhe encaminhar pra sua execução públlica no meio da vila.\n Chegando lá, dois guardas te seguram com as mãos para te levar para sua morte.\n Diante disso, o que você vai fazer? \n1. Tentar se soltar\n2. Permanecer quieta\n";
         txto25(texto);
-        printf(">>> ");
+        printf("Você tem: %d de VIDA\n>>> ", vida);
         scanf("%d", &esc);
         if (esc == 1)
         {
@@ -484,7 +484,7 @@ int p14a()
     {
         char *texto = "\n Os guardas logo te percebem e vão em peso atrás de você\n você tenta correr de volta para o esgoto mas já é tarde.\n Você foi capturada, oque você fará?\n1. Lutar\n2. se render\n";
         txto25(texto);
-        printf(">>> ");
+        printf("Você tem: %d de VIDA\n>>> ", vida);
         scanf("%d", &esc);
         if (esc == 1)
         {
@@ -508,7 +508,7 @@ int p13a()
     {
         char *texto = "\n Após uma bela caminhada pelos esgotos do castelo, você encontra uma escada que a leva a uma espécie de tampa.\n o que você fará? \n1. Continuar no esgoto\n2. Subir escadas\n";
         txto25(texto);
-        printf(">>> ");
+        printf("Você tem: %d de VIDA\n>>> ", vida);
         scanf("%d", &esc);
         if (esc == 1)
         {
@@ -532,7 +532,7 @@ int p12a()
     {
         char *texto = "\n Você se depara com um pote de sangue de goblin azul\n Você irá:\n1. tomar\n2. ignorar";
         txto25(texto);
-        printf(">>> ");
+        printf("Você tem: %d de VIDA\n>>> ", vida);
         scanf("%d", &esc);
         if (esc == 1)
         {
@@ -568,7 +568,7 @@ int p11a() // rota sem ler a nota
     {
         char *texto = "\n Seguindo pelo caminho à direita, logo você vê uma porta de ferro ao lado.\n O quê você fará?\n1. arrombar\n2. não arrombar\n";
         txto25(texto);
-        printf(">>> ");
+        printf("Você tem: %d de VIDA\n>>> ", vida);
         scanf("%d", &esc);
         if (esc == 1)
         {
@@ -593,7 +593,7 @@ int p10()
     {
         char *texto = "\n Você encontra um corpo com uma carta ao lado\n1. não ler\n2. ler\n";
         txto25(texto);
-        printf(">>> ");
+        printf("Você tem: %d de VIDA\n>>> ", vida);
         scanf("%d", &esc);
         if (esc == 1)
         {
@@ -608,6 +608,7 @@ int p10()
             return p11b();
         }
     }
+    return gameover();
 }
 
 int p9()
@@ -619,7 +620,8 @@ int p9()
         {
             char *texto = "\nApós caminhar por um tempo, Saori percebe que agora há 3 caminhos.\n Qual ela irá pegar?\n1. direita\n2. reto\n3. esquerda\n";
             txto25(texto);
-            printf("%d", &esc);
+            printf("Você tem: %d de VIDA\n>>> ", vida);
+            scanf("%d", &esc);
             if (esc == 1)
             {
                 char *texto2 = "\nSaori vai segue pela direita mas logo tem seu destino ceifado por um\n capelobo adulto que aproveita muito bem o sabor de suas vísceras\n";
@@ -645,7 +647,8 @@ int p9()
         {
             char *texto = "\nApós caminhar por um tempo, Ygona percebe que agora há 3 caminhos.\n Qual ela irá pegar? \n1. direita\n2. reto\n3. esquerda\n";
             txto25(texto);
-            printf("%d", &esc);
+            printf("Você tem: %d de VIDA\n>>> ", vida);
+            scanf("%d", &esc);
             if (esc == 1)
             {
                 char *texto2 = "\nYgona vai à direita e logo percebe um brilho vermelho mais à frente...\n Era uma flor de vida!\n +1 PONTE DE VIDA\n";
@@ -678,7 +681,7 @@ int p8()
     {
         char *texto = "\nPassado vários desafios você se depara com um poço.\n O que será feito?\n1. pular\n2. não pular\n";
         txto25(texto);
-        printf(">>> ");
+        printf("Você tem: %d de VIDA\n>>> ", vida);
         scanf("%d", &esc);
         if (esc == 1)
         {
@@ -693,6 +696,7 @@ int p8()
             return gameover();
         }
     }
+    return gameover();
 }
 int p7y2()
 {
@@ -701,7 +705,7 @@ int p7y2()
     {
         char *texto = "\nLogo ygona chega em uma sala escura, mas que logo se aende assim que ela põe os pés nela.\n Ygona se posiciona pressentindo um combate e assim\n se revela Maria Cururu, uma bruxa poderosa com ligações diretas com o submundo.\n Percebendo isso, Ygona precisa escolher seu ataque.\n1. Magia negra\2. Feitiço simples\n3. Feitiço de cura\n";
         txto25(texto);
-        printf(">>> ");
+        printf("Você tem: %d de VIDA\n>>> ", vida);
         scanf("%d", &esc);
         if (esc == 1)
         {
@@ -732,7 +736,7 @@ int p7y()
     {
         char *texto = "\nYgona continua seu caminho e percebe que há duas escolhas que levam ao mesmo destino.\n Qual ela irá escolher?\n1. direita\n 2. esquerda\n";
         txto25(texto);
-        printf(">>> ");
+        printf("Você tem: %d de VIDA\n>>> ", vida);
         scanf("%d", &esc);
         if (esc == 1)
         {
@@ -757,7 +761,7 @@ int p7()
         char *texto = "\nVocê chega a uma janela após muito tempo com iluminações artificiais farcas na masmorra.\n Contudo, você olha para baixo e vê a nível do solo a execução de uma familía inteira pela guarda real.\n Diante dessa situação oque você fará?\n1. salvar a familía\n2. se permitir chorar\n3. ignorar\n";
         txto25(texto);
         scanf("%d", &esc);
-        printf(">>> ");
+        printf("Você tem: %d de VIDA\n>>> ", vida);
         if (esc == 1)
         {
             char *texto2 = "\nSuas emoções calam a razão e você vai em direção a eles que estão à dezenas de metros abaixo.\n No fim você e eles deixam este plano.\n";
@@ -804,7 +808,7 @@ int p6()
         {
             char *texto = "\nSaori avança e chega á um salão escuro onde se depara com um grande troll raivoso. O que ela fará?\n1. pular no pescoço\n2. pular na cabeça\n3. destruir os pés\n";
             txto25(texto);
-            printf(">>> ");
+            printf("Você tem: %d de VIDA\n>>> ", vida);
             scanf("%d", &esc);
             if (esc == 1)
             {
@@ -829,7 +833,7 @@ int p6()
         {
             char *texto = "\nYgona se encintra em um salão escuro, mas não desabitado.\n Uma necromante se revela e invoca seus esqueletos para lhe exterminar.\n O que Ygona fará?\n1. Feitiço rapido\n2. Feitiço de cura\n3. Feitiço lento\n";
             txto25(texto);
-            printf(">>> ");
+            printf("Você tem: %d de VIDA\n>>> ", vida);
             scanf("%d", &esc);
             if (esc == 1)
             {
@@ -862,7 +866,7 @@ int p5()
         {
             char *texto = "\nVocê sevê diante de uma encruzihada com 5 opções que seguem a rosa dos ventos:\n1. A\n2. B\n3. C\n4. D\n5. E \n";
             txto25(texto);
-            printf(">>> ");
+            printf("Você tem: %d de VIDA\n>>> ", vida);
             scanf("%d", &esc);
             if (esc == 1)
             {
@@ -888,7 +892,7 @@ int p5()
         {
             char *texto = "\nVocê se vê diante de uma encruzihada com 5 opções que seguem a rosa dos ventos:\n1. O\n2. NO\n3. N\n4. NE\n5. L\n";
             txto25(texto);
-            printf(">>> ");
+            printf("Você tem: %d de VIDA\n>>> ", vida);
             scanf("%d", &esc);
             if (esc == 4)
             {
@@ -919,7 +923,7 @@ int p4()
     int esc;
     char *texto = "\nVocê chega em frente de uma cela e vê um pobre camponês pedindo para libertá-lo.\n O que você faz?\n1. soltar\n2. ignorar\n";
     txto25(texto);
-    printf(">>> ");
+    printf("Você tem: %d de VIDA\n>>> ", vida);
     scanf("%d", &esc);
     if (esc == 1)
     {
@@ -945,7 +949,7 @@ int p3()
         {
             char *texto = "\nSaori agora se encontra numa câmara onde há um soldado de sombras defendendo a saída.\n Onde Saori o atacará?\n 1.calcanhar\n 2.cabeça\n 3. tórax.\n";
             txto25(texto);
-            printf(">>> ");
+            printf("Você tem: %d de VIDA\n>>> ", vida);
             scanf("%d", &esc);
             if (esc == 1)
             {
@@ -971,7 +975,7 @@ int p3()
         {
             char *texto = "\nApós passar pela porta, Ygona percore o caminho aberto até ver um guarda adiante. Ela se esconde e percebe 3 possibilidades:\n 1. Atacar guarda com feitiço\n 2. Entrar na sala à direita\n 3. Entrar na sala à esquerda.\n";
             txto25(texto);
-            printf(">>> ");
+            printf("Você tem: %d de VIDA\n>>> ", vida);
             scanf("%d", &esc);
             if (esc == 1)
             {
@@ -1006,7 +1010,7 @@ int p2s()
         {
             char *texto = "\n Após escapar da morte certa, Saori se encontra no fim do corredor com apenas duas escolhas a fazer.\n 1. corredor à direita\n 2. corredor à esquerda\n";
             txto25(texto);
-            printf(">>> ");
+            printf("Você tem: %d de VIDA\n>>> ", vida);
             scanf("%d", &esc);
             if (esc == 1)
             {
@@ -1029,7 +1033,7 @@ int p2y()
         int esc;
         char *texto = "\nYgona se vê diante de runas encravadas em uma porta as quais ela reconhece e enetende a seguinte frase em línguas humans:\n Gbqbf bf pnzvaubf yrinz n ----\n Ela nota que tem que escolher um das 3 palavras incritas abaixo do enigma que completam a frase.\n Qual você escolhe? \n 1. Ebzn.\n 2. qbre.\n 3. zbegr.\n";
         txto25(texto);
-        printf(">>> ");
+        printf("Você tem: %d de VIDA\n>>> ", vida);
         scanf("%d", &esc);
         if (esc == 1)
         {
@@ -1060,7 +1064,7 @@ int p2()
         int esc;
         char *texto = "    \nVocê se encontra em um uma encruzilhada onde há três possibilidades de escolha:\n 1. Corredor à esquerda.\n 2. Corredor à frente.\n 3.Corredor à direita.\n";
         txto25(texto);
-        printf(">>> ");
+        printf("Você tem: %d de VIDA\n>>> ", vida);
         scanf("%d", &esc);
         if (esc == 1)
         {
@@ -1086,7 +1090,7 @@ int p2()
             if (pers == 1)
             {
                 char *texto2 = "\n Um corredor escuro e extremamente gosmento com um odor forte de amônia.\n Você então ouve um barulho horrível que vem de uma criatura logo à sua frente. \n Ele possui cerca de 7 metros, sem pelos, duas cabeças e membros deformados além da evidente irracionalidade agressiva.\n Diante desta situação, o que Saori fará?\n 1. esquivar\n 2.bloquear\n";
-                printf(">>>");
+                printf("Você tem: %d de VIDA\n>>> ", vida);
                 scanf("%d", &esc);
                 if (esc == 1)
                 {
