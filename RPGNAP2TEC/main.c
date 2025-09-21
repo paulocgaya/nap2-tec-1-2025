@@ -530,7 +530,7 @@ int p12a()
     int esc;
     while (vida != 0)
     {
-        char *texto = "\n Você se depara com um pote de sangue de goblin azul\n Você irá:\n1. tomar\n2. ignorar";
+        char *texto = "\n Você se depara com um pote de sangue de goblin azul\n Você irá:\n1. tomar\n2. ignorar\n";
         txto25(texto);
         printf("Você tem: %d de VIDA\n>>> ", vida);
         scanf("%d", &esc);
@@ -553,7 +553,7 @@ int p12a()
         }
         else
         {
-            char *texto2 = "\nvocê não bebeu.";
+            char *texto2 = "\n você não bebeu.";
             txto25(texto2);
             return p13a();
         }
@@ -703,13 +703,13 @@ int p7y2()
     int esc;
     while (vida != 0)
     {
-        char *texto = "\nLogo ygona chega em uma sala escura, mas que logo se aende assim que ela põe os pés nela.\n Ygona se posiciona pressentindo um combate e assim\n se revela Maria Cururu, uma bruxa poderosa com ligações diretas com o submundo.\n Percebendo isso, Ygona precisa escolher seu ataque.\n1. Magia negra\2. Feitiço simples\n3. Feitiço de cura\n";
+        char *texto = "\nLogo ygona chega em uma sala escura, mas que logo as luzes se acendem assim que ela põe os pés nela.\n Ygona se posiciona pressentindo um combate e assim\n se revela Maria Cururu, uma bruxa poderosa com ligações diretas com o submundo.\n Percebendo isso, Ygona precisa escolher seu ataque.\n1. Magia negra\n2. Feitiço simples\n3. Feitiço de cura\n";
         txto25(texto);
         printf("Você tem: %d de VIDA\n>>> ", vida);
         scanf("%d", &esc);
         if (esc == 1)
         {
-            char *texto2 = "\nYgona então faz a bruxa beber do próprio veneno e usa de conjurações infernais para mandar Vaninha para o submundo e não voltar mais.\n";
+            char *texto2 = "\nYgona então faz a bruxa beber do próprio veneno e usa de conjurações infernais para mandar Cururu para o submundo e não voltar mais.\n";
             txto25(texto2);
             return p8();
         }
@@ -864,7 +864,7 @@ int p5()
     {
         if (pers == 1)
         {
-            char *texto = "\nVocê sevê diante de uma encruzihada com 5 opções que seguem a rosa dos ventos:\n1. A\n2. B\n3. C\n4. D\n5. E \n";
+            char *texto = "\nVocê sevê diante de uma encruzihada com 5 opções que seguem a rosa dos ventos:\n1. O\n2. NO\n3. N\n4. NE\n5. L \n";
             txto25(texto);
             printf("Você tem: %d de VIDA\n>>> ", vida);
             scanf("%d", &esc);
@@ -1031,7 +1031,7 @@ int p2y()
     while (vida != 0)
     {
         int esc;
-        char *texto = "\nYgona se vê diante de runas encravadas em uma porta as quais ela reconhece e enetende a seguinte frase em línguas humans:\n Gbqbf bf pnzvaubf yrinz n ----\n Ela nota que tem que escolher um das 3 palavras incritas abaixo do enigma que completam a frase.\n Qual você escolhe? \n 1. Ebzn.\n 2. qbre.\n 3. zbegr.\n";
+        char *texto = "\nYgona se vê diante de runas encravadas em uma porta as quais ela reconhece e enetende a seguinte frase codificada em línguas humanas:\n Gbqbf bf pnzvaubf yrinz n ----\n Ela nota que tem que escolher um das 3 palavras incritas abaixo do enigma que completam a frase.\n Qual você escolhe? \n 1. Ebzn.\n 2. qbre.\n 3. zbegr.\n";
         txto25(texto);
         printf("Você tem: %d de VIDA\n>>> ", vida);
         scanf("%d", &esc);
@@ -1083,6 +1083,7 @@ int p2()
         else if (esc == 2)
         {
             char *texto2 = "\nUm corredor bem iluminado e relativamente limpo com uma luz visível em seu final, porém, o chão é falho e a sensação é de que ele irá desabar a qualquer momento.\n Estes fatores culminam na revelação trágica de uma armadilha letal de espinhos amaldiçoados.\n";
+            txto25(texto2);
             return gameover();
         }
         else
@@ -1090,6 +1091,7 @@ int p2()
             if (pers == 1)
             {
                 char *texto2 = "\n Um corredor escuro e extremamente gosmento com um odor forte de amônia.\n Você então ouve um barulho horrível que vem de uma criatura logo à sua frente. \n Ele possui cerca de 7 metros, sem pelos, duas cabeças e membros deformados além da evidente irracionalidade agressiva.\n Diante desta situação, o que Saori fará?\n 1. esquivar\n 2.bloquear\n";
+                txto25(texto2);
                 printf("Você tem: %d de VIDA\n>>> ", vida);
                 scanf("%d", &esc);
                 if (esc == 1)
@@ -1170,7 +1172,7 @@ int p1()
 
 int introducao()
 {
-    system("color 83");
+    system("color 80");
     if (pers == 1)
     {
         char *texto = "\n    Seu nome é Saori, você se depara presa em uma cela escura.    \n mesmo com a sua mente embaçada e dor de cabeça latejante, você tenta se lembrar o motivo de por que você está aprisionada…\n    Você estava caminhando no mercado da sua vila, Sacraamenthar, observando as crianças brincando nas ruas lotadas.    \n você acabou de retornar de uma missão difícil, em que você derrotou uma bruxa maligna na floresta, que estava aterrorizando a população local.    \n No canto de seus olhos, você olha uma criança chorando, correndo para um beco escuro. Sem pensar duas vezes, você corre em direção dela. Aquele local não é seguro para um ser tão vulnerável. Entrando no beco, você depara a criança imóvel, com as costas viradas a você.\n    Tentativamente, você se aproxima, e de repente, a pequena figura se transforma em uma mulher, de aparência vil.    \n Antes de você reagir, ela assopra um pó brilhante em sua direção, e sua consciência começa a desaparecer, entrando em um sono inquieto.\n";
